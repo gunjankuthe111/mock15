@@ -3,7 +3,8 @@ const Question = require("../models/quetion.model");
 const app = express.Router();
 
 app.get("/", async(req, res) => {
-  res.status(200).send({message: "Questions Route"});
+  const que = await Question.find()
+  res.status(200).send(que);
 });
 
 
